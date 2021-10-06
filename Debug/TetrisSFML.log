@@ -1,5 +1,6 @@
-﻿  main.cpp
-  MainMenu.cpp
-  Tetris.cpp
+﻿  State.cpp
+  main.cpp
+  MainMenuState.cpp
+  FrameManager.cpp
   Génération de code en cours...
   TetrisSFML.vcxproj -> C:\Users\JULIEN\Desktop\TetrisSFML\Debug\TetrisSFML.exe

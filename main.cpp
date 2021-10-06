@@ -1,7 +1,7 @@
-#include "Tetris.hpp"
+#include "FrameManager.hpp"
 
 int main()
 {
-    Tetris::Tetris(800, 600,"Tetris");
+    FrameManager::FrameManager(800, 600,"Tetris");
     return 0;
 }
