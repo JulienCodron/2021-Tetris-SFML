@@ -12,19 +12,28 @@
     <Filter Include="Fichiers sources\GameState">
       <UniqueIdentifier>{5954cc8e-1c8c-4e9d-8dbb-bb140ba76335}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Ressources">
+      <UniqueIdentifier>{cd50b94c-9e6f-42c5-8e26-ddc08a015632}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>Fichiers sources\GameState</Filter>
     </ClCompile>
     <ClCompile Include="FrameManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Fichiers sources\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphiqueManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ClicManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -39,6 +48,12 @@
     </ClInclude>
     <ClInclude Include="MainMenuState.hpp">
       <Filter>Fichiers sources\GameState</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphiqueManager.hpp">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="ClicManager.hpp">
+      <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

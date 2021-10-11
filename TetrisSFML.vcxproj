@@ -145,13 +145,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="State.cpp" />
+    <ClCompile Include="ClicManager.cpp" />
+    <ClCompile Include="GraphiqueManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="FrameManager.cpp" />
+    <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClicManager.hpp" />
     <ClInclude Include="DEFINITIONS.hpp" />
+    <ClInclude Include="GraphiqueManager.hpp" />
     <ClInclude Include="State.hpp" />
     <ClInclude Include="MainMenuState.hpp" />
     <ClInclude Include="FrameManager.hpp" />

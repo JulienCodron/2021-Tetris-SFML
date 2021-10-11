@@ -1,6 +1,7 @@
-﻿  State.cpp
-  main.cpp
+﻿  FrameManager.cpp
   MainMenuState.cpp
-  FrameManager.cpp
+C:\Users\JULIEN\Desktop\TetrisSFML\MainMenuState.cpp(16,23): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+  test.cpp
+C:\Users\JULIEN\Desktop\TetrisSFML\test.cpp(32,33): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
   Génération de code en cours...
   TetrisSFML.vcxproj -> C:\Users\JULIEN\Desktop\TetrisSFML\Debug\TetrisSFML.exe

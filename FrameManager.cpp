@@ -1,47 +1,43 @@
 #include "FrameManager.hpp"
+#include "MainMenuState.hpp"
 
+GameData::GameData() {
+    assets = new GraphiqueManager();
+    clic = new ClicManager();
+    ActualState = new MainMenuState(this);
+};
+
+GameData::~GameData() {
+    delete assets;
+    delete clic;
+    delete ActualState;
+};
 
 FrameManager::FrameManager(int width, int length, std::string Title){
-	this->window.create(sf::VideoMode(width, length), Title,sf::Style::Close);
-    this->dtClock.restart().asSeconds();
-    this->Run();
+    data = new GameData();
+	data->window.create(sf::VideoMode(width, length), Title,sf::Style::Close);
+    data->dtClock.restart().asSeconds();
+    data->ActualState->Init();
+    Run();
 };
+
+FrameManager::~FrameManager() {
+    delete data;
+}
 
 void FrameManager::UpdateDt() {
-    /* update dt at each frame*/
-    this->dt = this->dtClock.restart().asSeconds();
-};
+    dt = data->dtClock.restart().asSeconds();
+}
 
 void FrameManager::Run(){
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
+    while (data->window.isOpen())
     {
-        this->UpdateDt();
-        while (window.pollEvent(this->ev))
+        UpdateDt();
+        while (data->window.pollEvent(data->ev))
         {
-            switch(this->ev.type) {
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-
-                case sf::Event::KeyPressed:
-                    this->ActualState->HandleInput();
-
-                    if (this->ev.key.code == sf::Keyboard::Escape)
-                        window.close();
-                    break;
-
-                default:
-                    break;
-            }
+            data->ActualState->HandleInput();
         }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-
-
+        data->ActualState->Update();
+        data->ActualState->Draw(dt);
     }
 }
