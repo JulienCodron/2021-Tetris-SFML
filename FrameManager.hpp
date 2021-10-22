@@ -11,23 +11,23 @@ public:
 	sf::Event ev;
 	sf::Clock dtClock;
 
-	GraphiqueManager * assets;
-	ClicManager * clic;
+	GraphiqueManager assets;
+	ClicManager clic;
 	State * ActualState;
 
 	GameData();
-	~GameData();
+	GameData(const GameData& gd);
+	void Init();
 };
 
 
 class FrameManager {
 	protected:
-		GameData *data;	
+		GameData * data;	
 		float dt;
 
 	public:
 		FrameManager(int width, int length, std::string Title);
-		~FrameManager();
 		void Run();
 		void UpdateDt();
 };

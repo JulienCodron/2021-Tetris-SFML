@@ -3,14 +3,13 @@
 #include <sstream>
 
 MainMenuState::MainMenuState(GameData *gameData) : data(gameData) {}
-MainMenuState::~MainMenuState(){ delete data; }
 
 void MainMenuState::Init(){
-    (*data->assets).LoadTexture("Background", MAIN_MENU_BACKGROUND_FP);
-    (*data->assets).LoadTexture("Title", MAIN_MENU_TITLE_FP );
+    data->assets.LoadTexture("Background", MAIN_MENU_BACKGROUND_FP);
+    data->assets.LoadTexture("Title", MAIN_MENU_TITLE_FP );
 
-	background.setTexture((*data->assets).GetTexture("Background"));
-	title.setTexture((*data->assets).GetTexture("Title"));
+	background.setTexture(data->assets.GetTexture("Background"));
+	title.setTexture(data->assets.GetTexture("Title"));
 
 	title.setPosition((SCREEN_WIDTH / 2) - (title.getGlobalBounds().width / 2),
 		(SCREEN_HEIGHT / 2) - (title.getGlobalBounds().height / 2 * 0.1));

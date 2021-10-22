@@ -8,7 +8,6 @@ private:
 	std::map<std::string, sf::Font> fonts;
 public:
 	GraphiqueManager() {}
-	~GraphiqueManager() {}
 
 	void LoadTexture(std::string name, std::string fileName);
 	sf::Texture &GetTexture(std::string name);

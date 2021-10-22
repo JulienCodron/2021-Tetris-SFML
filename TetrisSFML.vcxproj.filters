@@ -15,6 +15,9 @@
     <Filter Include="Fichiers sources\Ressources">
       <UniqueIdentifier>{cd50b94c-9e6f-42c5-8e26-ddc08a015632}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Headers">
+      <UniqueIdentifier>{11cc8cd8-4290-4b1e-8904-cacce2747a30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -35,25 +38,31 @@
     <ClCompile Include="test.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="MemoryManager.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClicManager.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
     <ClInclude Include="FrameManager.hpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
     <ClInclude Include="DEFINITIONS.hpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="State.hpp">
-      <Filter>Fichiers sources\GameState</Filter>
+    <ClInclude Include="MemoryManager.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
     <ClInclude Include="MainMenuState.hpp">
-      <Filter>Fichiers sources\GameState</Filter>
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="State.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
     <ClInclude Include="GraphiqueManager.hpp">
-      <Filter>Fichiers sources</Filter>
-    </ClInclude>
-    <ClInclude Include="ClicManager.hpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
