@@ -1,8 +1,9 @@
 #include "MainMenuState.hpp"
-#include "DEFINITIONS.hpp"
-#include <sstream>
 
-MainMenuState::MainMenuState(GameData *gameData) : data(gameData) {}
+
+MainMenuState::MainMenuState(GameData *gameData){
+    data = gameData;
+};
 
 void MainMenuState::Init(){
     data->assets.LoadTexture("Background", MAIN_MENU_BACKGROUND_FP);
@@ -12,7 +13,7 @@ void MainMenuState::Init(){
 	title.setTexture(data->assets.GetTexture("Title"));
 
 	title.setPosition((SCREEN_WIDTH / 2) - (title.getGlobalBounds().width / 2),
-		(SCREEN_HEIGHT / 2) - (title.getGlobalBounds().height / 2 * 0.1));
+		(SCREEN_HEIGHT / 2) - (title.getGlobalBounds().height / 2 * 0.1)); 
 }
 
 void MainMenuState::HandleInput() {

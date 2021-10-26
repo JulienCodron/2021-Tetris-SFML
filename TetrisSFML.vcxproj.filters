@@ -41,6 +41,9 @@
     <ClCompile Include="MemoryManager.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="GameData.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClicManager.hpp">
@@ -62,6 +65,9 @@
       <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
     <ClInclude Include="GraphiqueManager.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.hpp">
       <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
   </ItemGroup>

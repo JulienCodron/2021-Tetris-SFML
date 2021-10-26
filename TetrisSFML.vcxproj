@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClicManager.cpp" />
+    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GraphiqueManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
@@ -156,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="ClicManager.hpp" />
     <ClInclude Include="DEFINITIONS.hpp" />
+    <ClInclude Include="GameData.hpp" />
     <ClInclude Include="GraphiqueManager.hpp" />
     <ClInclude Include="MemoryManager.hpp" />
     <ClInclude Include="State.hpp" />

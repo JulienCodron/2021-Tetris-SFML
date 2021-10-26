@@ -1,6 +1,8 @@
 #include "MemoryManager.hpp"
 #include <iostream>
 
+MemoryManager::MemoryManager() {}
+
 // Construct the allocator
 MemoryManager::MemoryManager(size_t total_size): total_size(total_size) {
     if (memory_ptr != nullptr) {
@@ -17,14 +19,14 @@ size_t MemoryManager::getMarker() {
 
 // Allocates a new block from the top
 void* MemoryManager::alloc(size_t size) {
-    size_t currentAddress = (size_t)memory_ptr + marker;
-    
-    if (sizeof((void*)currentAddress) + size > total_size) {
+    const std::size_t nextAddress = (size_t)memory_ptr + marker;
+    if (sizeof((void*)nextAddress) + size > total_size) {
         return nullptr;
     }
     marker += size;
     total_size -= size;
-    return (void*)currentAddress;
+    void* g = (void*)nextAddress;
+    return g;
 }
 
 // Rolls the stack back to a previous marker

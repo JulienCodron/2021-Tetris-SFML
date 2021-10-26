@@ -1,18 +1,15 @@
 #pragma once
-#include "State.hpp"
-#include "FrameManager.hpp"
-#include <SFML/Graphics.hpp>
+#include "GameData.hpp"
+#include <sstream>
 
 class MainMenuState : public State {
 private:
-	GameData * data;
 	sf::Sprite background;
 	sf::Sprite title;
 
 public:
-
+	GameData* data;
 	MainMenuState(GameData *gameData);
-	~MainMenuState();
 	void Init();
 	void HandleInput();
 	void Update();

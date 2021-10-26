@@ -1,24 +1,19 @@
 #include "FrameManager.hpp"
 #include "MainMenuState.hpp"
-
-GameData::GameData() {
-};
-
-
-void GameData::Init() {
-    assets = GraphiqueManager();
-    clic = ClicManager();
-    ActualState = new MainMenuState(this);
-}
+#include <iostream>
 
 FrameManager::FrameManager(int width, int length, std::string Title){
     data = new GameData();
-    data->Init();
+    data->ActualState = new MainMenuState(data);
     data->ActualState->Init();
 	data->window.create(sf::VideoMode(width, length), Title,sf::Style::Close);
     data->dtClock.restart().asSeconds();
     Run();
-};
+}
+
+FrameManager::~FrameManager() {
+    delete data;
+}
 
 
 void FrameManager::UpdateDt() {
@@ -33,7 +28,9 @@ void FrameManager::Run(){
         {
             data->ActualState->HandleInput();
         }
-        data->ActualState->Update();
-        data->ActualState->Draw(dt);
+        if (data->window.isOpen()) {
+            data->ActualState->Update();
+            data->ActualState->Draw(dt);
+        }
     }
 }
