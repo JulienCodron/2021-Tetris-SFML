@@ -5,8 +5,9 @@
 class GameOverState : public State {
 private:
 	GameData* data;
+	bool initialised = false;
 	sf::Sprite gameOver;
-
+	
 
 public:
 	GameOverState() {};

@@ -58,6 +58,11 @@ void GameState::HandleInput() {
 }
 
 void GameState::Update() { 
+    if (!initialised) {
+        Init();
+        initialised = true;
+    }
+
    game_matrice.UpdateTetromino(current_Tetromino);
    if (game_matrice.CanMooveDown(current_Tetromino))
        //game_matrice.UpdatePosTetromino(current_Tetromino);

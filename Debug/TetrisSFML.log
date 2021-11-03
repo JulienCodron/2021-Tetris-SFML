@@ -1,3 +1,12 @@
-﻿  GameOverState.cpp
+﻿  FrameManager.cpp
+  GameOverState.cpp
 C:\Users\JULIEN\Desktop\TetrisSFML\GameOverState.cpp(12,29): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+  GameState.cpp
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(86,103): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(86,59): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  MainMenuState.cpp
+C:\Users\JULIEN\Desktop\TetrisSFML\MainMenuState.cpp(15,23): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+  StateManager.cpp
+  main.cpp
+  Génération de code en cours...
   TetrisSFML.vcxproj -> C:\Users\JULIEN\Desktop\TetrisSFML\Debug\TetrisSFML.exe

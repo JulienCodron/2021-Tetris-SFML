@@ -5,6 +5,8 @@
 class MainMenuState : public State {
 private:
 	GameData* data;
+	bool initialised = false;
+
 	sf::Sprite background;
 	sf::Sprite title;
 

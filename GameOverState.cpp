@@ -29,7 +29,10 @@ void GameOverState::HandleInput() {
 }
 
 void GameOverState::Update() {
-
+    if (!initialised) {
+        Init();
+        initialised = true;
+    }
 }
 
 void GameOverState::Draw(float dt) {

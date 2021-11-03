@@ -9,6 +9,8 @@ private:
 	GameData* data;
 	Tetromino* current_Tetromino;
 	GameMatrice game_matrice;
+	bool initialised = false;
+
 	sf::Sprite cube;
 	sf::Sprite background;
 
