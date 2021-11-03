@@ -9,9 +9,9 @@ public:
 	size_t total_size;
 	size_t marker;
 
-	MemoryManager(size_t size);
 	MemoryManager();
 	~MemoryManager();
+	void Init(size_t size);
 	size_t getMarker();
 	void* alloc(size_t size);
 	void freeToMarker(size_t marker);

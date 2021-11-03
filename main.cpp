@@ -42,7 +42,7 @@ int main()
     _CrtMemState sDiff;
     _CrtMemCheckpoint(&sOld); //take a snapshot
 
-    FrameManager(SCREEN_HEIGHT, SCREEN_WIDTH, "Tetris");
+    FrameManager(SCREEN_WIDTH,SCREEN_HEIGHT, "Tetris");
 
     _CrtMemCheckpoint(&sNew); //take a snapshot 
     if (_CrtMemDifference(&sDiff, &sOld, &sNew)) // if there is a difference

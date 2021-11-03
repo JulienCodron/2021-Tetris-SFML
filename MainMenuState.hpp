@@ -4,11 +4,12 @@
 
 class MainMenuState : public State {
 private:
+	GameData* data;
 	sf::Sprite background;
 	sf::Sprite title;
 
 public:
-	GameData* data;
+	MainMenuState() {};
 	MainMenuState(GameData *gameData);
 	void Init();
 	void HandleInput();

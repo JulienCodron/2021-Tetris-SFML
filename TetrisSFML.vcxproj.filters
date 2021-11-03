@@ -18,31 +18,52 @@
     <Filter Include="Fichiers sources\Headers">
       <UniqueIdentifier>{11cc8cd8-4290-4b1e-8904-cacce2747a30}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers sources\Manager">
+      <UniqueIdentifier>{ebb4a8cf-eaa4-4bb7-b0f1-fdfa98ec1ada}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\Object">
+      <UniqueIdentifier>{054fe105-c988-4b5b-b1d0-d04fc3e9652b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="FrameManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
       <Filter>Fichiers sources\GameState</Filter>
-    </ClCompile>
-    <ClCompile Include="GraphiqueManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="ClicManager.cpp">
-      <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="test.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="MemoryManager.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="GameData.cpp">
       <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ClicManager.cpp">
+      <Filter>Fichiers sources\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameManager.cpp">
+      <Filter>Fichiers sources\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphiqueManager.cpp">
+      <Filter>Fichiers sources\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryManager.cpp">
+      <Filter>Fichiers sources\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>Fichiers sources\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="GameState.cpp">
+      <Filter>Fichiers sources\GameState</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetromino.cpp">
+      <Filter>Fichiers sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMatrice.cpp">
+      <Filter>Fichiers sources\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOverState.cpp">
+      <Filter>Fichiers sources\GameState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,6 +89,21 @@
       <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
     <ClInclude Include="GameData.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Tetromino.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMatrice.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOverState.hpp">
       <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
   </ItemGroup>

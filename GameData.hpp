@@ -11,12 +11,11 @@ public:
 	sf::Event ev;
 	sf::Clock dtClock;
 
-	//MemoryManager memory_m;
-	GraphiqueManager assets;
-	ClicManager clic;
-	State* ActualState;
+	//manager
+	StateEnum ActualState;
+	MemoryManager memory_m;
+	GraphiqueManager assets_m;
+	ClicManager clic_m;
 
-	GameData();
-	~GameData();
-
+	GameData() {};
 };

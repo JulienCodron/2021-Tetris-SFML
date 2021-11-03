@@ -147,22 +147,32 @@
   <ItemGroup>
     <ClCompile Include="ClicManager.cpp" />
     <ClCompile Include="GameData.cpp" />
+    <ClCompile Include="GameMatrice.cpp" />
+    <ClCompile Include="GameOverState.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="GraphiqueManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="FrameManager.cpp" />
     <ClCompile Include="MemoryManager.cpp" />
+    <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="test.cpp" />
+    <ClCompile Include="Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClicManager.hpp" />
     <ClInclude Include="DEFINITIONS.hpp" />
     <ClInclude Include="GameData.hpp" />
+    <ClInclude Include="GameMatrice.hpp" />
+    <ClInclude Include="GameOverState.hpp" />
+    <ClInclude Include="GameState.hpp" />
     <ClInclude Include="GraphiqueManager.hpp" />
     <ClInclude Include="MemoryManager.hpp" />
     <ClInclude Include="State.hpp" />
     <ClInclude Include="MainMenuState.hpp" />
     <ClInclude Include="FrameManager.hpp" />
+    <ClInclude Include="StateManager.hpp" />
+    <ClInclude Include="Tetromino.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "GraphiqueManager.hpp"
 
+
 void GraphiqueManager::LoadTexture(std::string name, std::string fileName) {
 	sf::Texture tex;
 	if (tex.loadFromFile(fileName)) {

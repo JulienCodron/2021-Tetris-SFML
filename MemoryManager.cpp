@@ -4,11 +4,11 @@
 MemoryManager::MemoryManager() {}
 
 // Construct the allocator
-MemoryManager::MemoryManager(size_t total_size): total_size(total_size) {
+void MemoryManager::Init(size_t size) {
     if (memory_ptr != nullptr) {
         free(memory_ptr);
     }
-    memory_ptr = malloc(total_size);
+    memory_ptr = malloc(size);
     marker = 0;
 }
 

@@ -1,2 +1,3 @@
-﻿  main.cpp
+﻿  GameOverState.cpp
+C:\Users\JULIEN\Desktop\TetrisSFML\GameOverState.cpp(12,29): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
   TetrisSFML.vcxproj -> C:\Users\JULIEN\Desktop\TetrisSFML\Debug\TetrisSFML.exe
