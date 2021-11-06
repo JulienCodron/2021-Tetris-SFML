@@ -12,28 +12,6 @@
 #include "MainMenuState.hpp"
 #include <iostream>
 
-//class alo {
-//public:
-//    virtual void showi() = 0;
-//};
-
-//class Complex : public alo {
-//private:
-//    int x;
-//    int y;
-//    int z;
-//public:
-//    Complex(int x, int y,int z) : x(x),y(y), z(z) {};
-//    void showi() {};
-//};
-//
-//void test() {
-//    alo* a = new Complex(1,2,6);
-//    delete a;
-//
-//    a = new Complex(1, 9, 8);
-//    delete a;
-//}
 
 int main()
 {

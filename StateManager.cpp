@@ -1,12 +1,13 @@
 #include "StateManager.hpp"
 
 
-StateManager::StateManager(GameData* gameData) {
+StateManager::StateManager(GameData* gameData) : data(gameData){
 	//create all states and initialise the state manager on the MainMenuState.
 	mainMenuState = MainMenuState(gameData);
-	gameState = GameState(gameData);
 	gameOverState = GameOverState(gameData);
-	ActualState = StateEnum::Game;
+	pauseState = PauseState(gameData);
+	LastState = StateEnum::MainMenu;
+	ActualState = StateEnum::MainMenu;
 	dt = gameData->dtClock;
 }
 
@@ -20,6 +21,9 @@ void StateManager::Init() {
 			break;
 		case StateEnum::GameOverMenu:
 			gameOverState.Init();
+			break;
+		case StateEnum::PauseMenu:
+			pauseState.Init();
 			break;
 	}
 }
@@ -35,6 +39,9 @@ void StateManager::HandleInput() {
 		case StateEnum::GameOverMenu:
 			gameOverState.HandleInput();
 			break;
+		case StateEnum::PauseMenu:
+			pauseState.HandleInput();
+			break;
 	}
 }
 
@@ -48,6 +55,9 @@ void StateManager::Update() {
 			break;
 		case StateEnum::GameOverMenu:
 			gameOverState.Update();
+			break;
+		case StateEnum::PauseMenu:
+			pauseState.Update();
 			break;
 	}
 }
@@ -63,5 +73,13 @@ void StateManager::Draw(float dt) {
 		case StateEnum::GameOverMenu:
 			gameOverState.Draw(dt);
 			break;
+		case StateEnum::PauseMenu:
+			pauseState.Draw(dt);
+			break;
 	}
+}
+
+void StateManager::ComeFromGameOver() {
+	if ((LastState == StateEnum::GameOverMenu && ActualState == StateEnum::Game) || LastState == StateEnum::MainMenu)
+		gameState = GameState(data);
 }

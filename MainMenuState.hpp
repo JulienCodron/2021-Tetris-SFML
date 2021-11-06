@@ -9,6 +9,7 @@ private:
 
 	sf::Sprite background;
 	sf::Sprite title;
+	sf::Sprite info;
 
 public:
 	MainMenuState() {};

@@ -9,7 +9,6 @@ public:
 	sf::Color color;
 
 	Block() {};
-	void print();
 };
 
 class Tetromino {
@@ -17,6 +16,8 @@ public:
 	int posX;
 	int posY;
 	Block piece[4][4];
+	TetrominoEnum type;
 	Tetromino();
 	Tetromino(TetrominoEnum type);
+	bool estVide();
 };

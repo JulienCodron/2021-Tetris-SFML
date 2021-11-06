@@ -155,6 +155,7 @@
     <ClCompile Include="MainMenuState.cpp" />
     <ClCompile Include="FrameManager.cpp" />
     <ClCompile Include="MemoryManager.cpp" />
+    <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="StateManager.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="Tetromino.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="GameState.hpp" />
     <ClInclude Include="GraphiqueManager.hpp" />
     <ClInclude Include="MemoryManager.hpp" />
+    <ClInclude Include="PauseState.hpp" />
     <ClInclude Include="State.hpp" />
     <ClInclude Include="MainMenuState.hpp" />
     <ClInclude Include="FrameManager.hpp" />

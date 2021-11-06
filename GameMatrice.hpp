@@ -9,10 +9,9 @@ public:
 	const static int ySize = 20;
 	Block matrice[ySize][xSize];
 	GameMatrice();
-	void print();
 	bool CanMooveDown(Tetromino* t);
 	bool CanRotate(Tetromino * t);
-	void DeleteLine();
+	int DeleteLine();
 	void UpdateTetromino(Tetromino* t);
 	void DeleteTetromino(Tetromino* t);
 	bool IsOnMatrice(int i, int j);
@@ -22,4 +21,5 @@ public:
 	void Rotate(Tetromino* t);
 	bool LineComplete(Block * line);
 	bool GameOver();
+	bool CanSwap(Tetromino* t1, Tetromino* t2);
 };

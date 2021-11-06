@@ -1,18 +1,6 @@
 #include "GameMatrice.hpp"
-using namespace std;
-#include <iostream>
 
 GameMatrice::GameMatrice(){}
-
-void GameMatrice::print() {
-	for (int a = 0; a < ySize; ++a) {
-		cout << endl;
-		for (int b = 0; b < xSize; ++b) {
-			matrice[a][b].print();
-		}
-	}
-	cout << endl << endl;
-}
 
 void GameMatrice::UpdateTetromino(Tetromino *t) {
 	//update the matrice with a tetromino
@@ -60,12 +48,10 @@ void GameMatrice::MooveDown(Tetromino* t) {
 	if (CanMooveDown(t)) {
 		DeleteTetromino(t);
 		t->posY += 1;
-		UpdateTetromino(t);
-		print();
 	}
 }
 
-void GameMatrice::DeleteTetromino(Tetromino* t) {
+void GameMatrice::DeleteTetromino(Tetromino* t) {	
 	for (int i = 0; i <= 3; ++i)
 		for (int j = 0; j <= 3; ++j)
 			if (IsOnMatrice(t->posY + i, t->posX + j)) {
@@ -88,8 +74,6 @@ void GameMatrice::MooveLeft(Tetromino *t) {
 
 	
 	t->posX -= 1;
-	UpdateTetromino(t);
-	print();
 }
 
 void GameMatrice::MooveRight(Tetromino *t) {
@@ -106,8 +90,6 @@ void GameMatrice::MooveRight(Tetromino *t) {
 
 	DeleteTetromino(t);
 	t->posX += 1;
-	UpdateTetromino(t);
-	print();
 }
 
 void GameMatrice::Rotate(Tetromino* t) {
@@ -129,20 +111,19 @@ void GameMatrice::Rotate(Tetromino* t) {
 			}
 		}	
 	}
-	else {
-		print();
-	}
-	UpdateTetromino(t);
-	print();
 }
 
-void GameMatrice::DeleteLine() {
+int GameMatrice::DeleteLine() {
 	bool line = false;
+	int nbLineDel = 0;
 	for (int a = 0; a < ySize; ++a) 
-		if (LineComplete(matrice[a])) 
-			for (int y = a ; y > 0; --y)
+		if (LineComplete(matrice[a])) {
+			nbLineDel++;
+			for (int y = a; y > 0; --y)
 				for (int j = 0; j < xSize; ++j)
-					matrice[y][j] = matrice[y-1][j];
+					matrice[y][j] = matrice[y - 1][j];
+		}	
+	return nbLineDel;
 }
 
 bool GameMatrice::LineComplete(Block * line){
@@ -152,17 +133,30 @@ bool GameMatrice::LineComplete(Block * line){
 	return true;
 }
 
+bool GameMatrice::CanSwap(Tetromino * t1, Tetromino* t2) {
+	for (int i = 0; i <= 3; ++i) {
+		for (int j = 0; j <= 3; ++j) {
+			if(t2->piece[i][j].active && matrice[i+ t1->posY][j+ t1->posX].active && !t1->piece[i][j].active)
+				return false;
+		}
+	}
+	return true;
+}
+
 
 bool GameMatrice::GameOver() {
-	bool res = false;
-	for (int j = 0; j < xSize; ++j){
-		res = true;
-		for (int i = 0; i < ySize; ++i) {
-			if (!matrice[i][j].active)
-				res = false;
+	bool line = false;
+	int j = 0;
+	for (int i = 0; i < ySize; ++i){
+		line = false;
+		j = 0;
+		while (!line && j < xSize){
+			++j;
+			if (matrice[i][j].active)
+				line = true;
 		}
-		if (res)
-			return true;
+		if (!line) 
+			return false;	
 	}
-	return false;
+	return true;
 }

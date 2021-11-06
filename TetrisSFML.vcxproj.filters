@@ -65,6 +65,9 @@
     <ClCompile Include="GameOverState.cpp">
       <Filter>Fichiers sources\GameState</Filter>
     </ClCompile>
+    <ClCompile Include="PauseState.cpp">
+      <Filter>Fichiers sources\GameState</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClicManager.hpp">
@@ -104,6 +107,9 @@
       <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
     <ClInclude Include="GameOverState.hpp">
+      <Filter>Fichiers sources\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseState.hpp">
       <Filter>Fichiers sources\Headers</Filter>
     </ClInclude>
   </ItemGroup>
