@@ -3,6 +3,7 @@
 Tetromino::Tetromino() : posX(3), posY(-3) {}
 
 Tetromino::Tetromino(TetrominoEnum type) : posX(3), type(type) {
+	//construct the tetromino with Block Items,according to the type given
 	posY = -2;
 	switch (type) {
 	case TetrominoEnum::S1:

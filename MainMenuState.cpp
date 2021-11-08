@@ -5,6 +5,7 @@ MainMenuState::MainMenuState(GameData *gameData){
 };
 
 void MainMenuState::Init(){
+    //load all assets and init their position/color
     data->assets_m.LoadTexture("Background", MAIN_MENU_BACKGROUND_FP);
     data->assets_m.LoadTexture("Title", MAIN_MENU_TITLE_FP );
     data->assets_m.LoadTexture("MainMenuInfo", MAIN_MENU_INFO_FP );

@@ -2,10 +2,13 @@
 
 #define SCREEN_WIDTH 590
 #define SCREEN_HEIGHT 960
+
+//Sprite for MainMenuState
 #define MAIN_MENU_BACKGROUND_FP "Ressources/Main_Menu/Grille.png"
 #define MAIN_MENU_TITLE_FP "Ressources/Main_Menu/Titre.png"
 #define MAIN_MENU_INFO_FP "Ressources/Main_Menu/MainMenuInfo.png"
 
+//Sprite for GameState / PauseState and GameOverState
 #define PAUSE "Ressources/Game/pause.png"
 #define CONTINUE "Ressources/Game/continue.png"
 #define RESTART "Ressources/Game/restart.png"
@@ -16,7 +19,10 @@
 #define GAMEOVER "Ressources/Game/gameover.png"
 #define FONT "Ressources/Font/telelower.ttf"
 
-#define MEMORY_ALLOCATED 100000
+
+#define MEMORY_ALLOCATED 100000 // for memory manager
+
+//To set the position of differente sprite
 #define PLAYGROUND_WIDTH_POSTION 17
 #define PLAYGROUND_HEIGHT_POSTION 94
 #define SIDE_TETROMINO_WIDTH_POSTION 461
@@ -37,10 +43,11 @@
 #define ADVANCED_BAR_WIDTH_POSTION 480
 #define ADVANCED_BAR_HEIGHT_POSTION 724
 
-
 #define BLOCK_SIZE 40
 #define LITLE_BLOCK_SIZE 30
 
+
+//colors
 #define COLOR_RED 231, 76, 60 
 #define COLOR_YELLOW 241, 196, 15
 #define COLOR_DARK_GREEN 17, 122, 101 
@@ -49,5 +56,7 @@
 #define COLOR_GREEN  88, 214, 141  
 #define COLOR_BLUE 46, 64, 83  
 
+
+//Enumes
 enum class StateEnum{MainMenu, Game, PauseMenu, GameOverMenu};
 enum class TetrominoEnum { S1, S2, T, R, L1, L2, I };

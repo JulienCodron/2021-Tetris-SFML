@@ -4,6 +4,7 @@ GameOverState::GameOverState(GameData* gameData):data(gameData) {
 };
 
 void GameOverState::Init() {
+    //load textures and initialise sprites
     data->assets_m.LoadTexture("GameOver", GAMEOVER);
     data->assets_m.LoadTexture("Restart", RESTART);
     data->assets_m.LoadTexture("Quit", QUIT);
@@ -36,11 +37,11 @@ void GameOverState::HandleInput() {
                 break;
 
             case sf::Keyboard::Enter:
+                //Switch state and start game
                 data->ActualState = StateEnum::Game;
                 break;
         }
-   
-
+ 
     default:
         break;
     }
@@ -54,6 +55,7 @@ void GameOverState::Update() {
 }
 
 void GameOverState::Draw(float dt) {
+    //draw all sprites
     data->window.draw(gameOver);
     data->window.draw(restart);
     data->window.draw(quit);

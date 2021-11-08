@@ -1,5 +1,6 @@
 #include "ClicManager.hpp"
 
+// Wanna do clicable button for menu, but finally i didn't implement them
 bool ClicManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, sf::RenderWindow &window){
 	if (sf::Mouse::isButtonPressed(button)){
 		sf::IntRect playButtonRect(object.getPosition().x, object.getPosition().y, object.getGlobalBounds().width, object.getGlobalBounds().height);

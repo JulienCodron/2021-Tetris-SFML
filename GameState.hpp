@@ -1,12 +1,15 @@
 #pragma once
 #include "GameData.hpp"
-#include <sstream>
 #include "Tetromino.hpp"
 #include "GameMatrice.hpp"
+#include "State.hpp"
+
 
 class GameState : public State {
 private:
 	GameData* data;
+
+	//all the game settings
 	Tetromino holded_Tetromino;
 	Tetromino current_Tetromino;
 	Tetromino seconde_Tetromino;
@@ -14,12 +17,15 @@ private:
 	Tetromino fourth_Tetromino;
 	GameMatrice game_matrice;
 	bool initialised = false;
-	clock_t start;
-	int speed = 1;
+	bool lastChance = false;
+	sf::Clock start;
+	int goal[30] = { 3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9,9,10,10,10,11,11,11,12,12,12 };
+	float speed = 750 ;
 	int lvl = 0;
 	int lineComplet = 0;
 	int score = 0;
-	int goal[30] = {3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9,9,10,10,10,11,11,11,12,12,12};
+
+	//sprite ans things to draw
 	sf::Text nb_line_left;
 	sf::Text current_lvl;
 	sf::Text current_score;
@@ -31,7 +37,6 @@ private:
 
 public:
 	GameState() {};
-	~GameState();
 	GameState(GameData* gameData);
 	void Init();
 	void HandleInput();

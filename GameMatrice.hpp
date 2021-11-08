@@ -15,9 +15,9 @@ public:
 	void UpdateTetromino(Tetromino* t);
 	void DeleteTetromino(Tetromino* t);
 	bool IsOnMatrice(int i, int j);
-	void MooveLeft(Tetromino* t);
-	void MooveRight(Tetromino* t);
-	void MooveDown(Tetromino* t);
+	void MoveLeft(Tetromino* t);
+	void MoveRight(Tetromino* t);
+	void MoveDown(Tetromino* t);
 	void Rotate(Tetromino* t);
 	bool LineComplete(Block * line);
 	bool GameOver();

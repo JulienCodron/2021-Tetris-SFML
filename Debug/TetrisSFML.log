@@ -1,33 +1,32 @@
-﻿  FrameManager.cpp
-  GameMatrice.cpp
+﻿  GameMatrice.cpp
   GameState.cpp
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(48,17): warning C4244: '=' : conversion de 'time_t' en 'clock_t', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(108,25): warning C4244: '=' : conversion de 'time_t' en 'clock_t', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(170,105): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(170,59): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(188,133): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(188,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(190,132): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(190,76): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(197,134): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(197,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(199,129): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(199,72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(206,132): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(206,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(208,127): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(208,72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(215,133): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(215,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(217,128): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(217,72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(237,53): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(185,105): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(185,59): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(203,133): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(203,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(205,132): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(205,76): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(212,134): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(212,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(214,129): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(214,72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(221,132): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(221,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(223,127): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(223,72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(230,133): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(230,77): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(232,128): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(232,72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\JULIEN\Desktop\TetrisSFML\GameState.cpp(252,53): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
           with
           [
               T=float
           ]
+  main.cpp
+  FrameManager.cpp
+C:\Users\JULIEN\Desktop\TetrisSFML\FrameManager.cpp(19,48): warning C4244: '=' : conversion de 'sf::Int32' en 'float', perte possible de données
   StateManager.cpp
   Tetromino.cpp
-  main.cpp
   Génération de code en cours...
   TetrisSFML.vcxproj -> C:\Users\JULIEN\Desktop\TetrisSFML\Debug\TetrisSFML.exe

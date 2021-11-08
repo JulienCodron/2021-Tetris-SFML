@@ -1,6 +1,5 @@
 #pragma once
 #include "State.hpp"
-#include "DEFINITIONS.hpp"
 #include "MainMenuState.hpp"
 #include "GameOverState.hpp"
 #include "GameState.hpp"

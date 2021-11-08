@@ -4,6 +4,7 @@ PauseState::PauseState(GameData * gameData) :data(gameData) {
 };
 
 void PauseState::Init() {
+    //load textures and initialise sprites
     data->assets_m.LoadTexture("Pause", PAUSE);
     data->assets_m.LoadTexture("Continue", CONTINUE);
     data->assets_m.LoadTexture("Quit", QUIT);
@@ -37,6 +38,7 @@ void PauseState::HandleInput() {
 
         case sf::Keyboard::Space:
         case sf::Keyboard::Enter:
+            //go back to the gameState
             data->ActualState = StateEnum::Game;
             break;
         }

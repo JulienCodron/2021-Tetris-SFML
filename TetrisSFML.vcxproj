@@ -146,7 +146,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClicManager.cpp" />
-    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="GameMatrice.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameState.cpp" />
@@ -157,7 +156,6 @@
     <ClCompile Include="MemoryManager.cpp" />
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="StateManager.cpp" />
-    <ClCompile Include="test.cpp" />
     <ClCompile Include="Tetromino.cpp" />
   </ItemGroup>
   <ItemGroup>

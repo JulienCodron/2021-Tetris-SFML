@@ -7,12 +7,8 @@ GameState::GameState(GameData* gameData) : data(gameData) {
     fourth_Tetromino = Tetromino(TetrominoEnum(rand() % 7));
 }
 
-GameState::~GameState() {
-    //delete current_Tetromino;
-}
-
-
 void GameState::Init() {
+    //load all assets and init their position/color
     data->assets_m.LoadTexture("Cube", CUBE);
     data->assets_m.LoadTexture("LitleCube", LITLE_CUBE);
     data->assets_m.LoadTexture("Background", GAME_BACKGROUND_FP);
@@ -45,7 +41,8 @@ void GameState::Init() {
     best_score.setFillColor(sf::Color(244, 226, 172));
     best_score.setPosition(BEST_SCORE_WIDTH_POSTION, BEST_SCORE_HEIGHT_POSTION);
 
-    start = time(0);
+    //init a timer use to moove the tetromino
+    start.restart();
 }
 
 void GameState::HandleInput() {
@@ -58,12 +55,12 @@ void GameState::HandleInput() {
         switch (data->ev.key.code) {
             case sf::Keyboard::Left:
             case sf::Keyboard::Q:
-                game_matrice.MooveLeft(&current_Tetromino);
+                game_matrice.MoveLeft(&current_Tetromino);
                 break;
 
             case sf::Keyboard::Right:
             case sf::Keyboard::D:
-                game_matrice.MooveRight(&current_Tetromino);
+                game_matrice.MoveRight(&current_Tetromino);
                 break;
 
             case sf::Keyboard::Up:
@@ -73,7 +70,7 @@ void GameState::HandleInput() {
 
             case sf::Keyboard::Down:
             case sf::Keyboard::S:
-                game_matrice.MooveDown(&current_Tetromino);
+                game_matrice.MoveDown(&current_Tetromino);
                 break;
 
             case sf::Keyboard::Enter:
@@ -83,6 +80,7 @@ void GameState::HandleInput() {
                 break;
 
             case sf::Keyboard::Escape:
+                //Change the state to pause the game
                 data->ActualState = StateEnum::PauseMenu;
                 break;
 
@@ -100,45 +98,63 @@ void GameState::Update() {
         initialised = true;
     }
 
+    //Check if the tetromino can moove down 
     if (game_matrice.CanMooveDown(&current_Tetromino)) {
+        //move the tetromino if "speed" (in ms) pass and redraw him on the matrix
         game_matrice.DeleteTetromino(&current_Tetromino);
-        if (time(0) - start > speed)
+        if (start.getElapsedTime().asMilliseconds() >= speed)
         {
             current_Tetromino.posY += 1;          
-            start = time(0);
-        }
-        else if (time(0) - start == speed) {
-            current_Tetromino.posY += 1;
-            start = start + speed;
+            start.restart();
         }
         game_matrice.UpdateTetromino(&current_Tetromino);
+        lastChance = true;
     }
     else {
-        if (game_matrice.GameOver()) {
-            Draw(0);
-            data->ActualState = StateEnum::GameOverMenu;
-            return;
+        if (lastChance) {
+            //allow the player to move the tetromino at the end
+            if (start.getElapsedTime().asMilliseconds() >= speed)
+            {
+                lastChance = false;
+                start.restart();
+            }
         }
-        int linedeleted = game_matrice.DeleteLine();
-        
-        if (linedeleted > 0) {
-            lineComplet += linedeleted;
-            score += 10 * linedeleted + 10 * (linedeleted - 1);
-        }
-        
-        if (lineComplet >= goal[lvl]) {
-            lineComplet = lineComplet - goal[lvl];
-            lvl += 1;
-            score += 100;
-        }
-        current_Tetromino = seconde_Tetromino;
-        seconde_Tetromino = third_Tetromino;
-        third_Tetromino = fourth_Tetromino;
-        fourth_Tetromino = Tetromino(TetrominoEnum(rand() % 7));
+        else {
+            //check if game is over
+            if (game_matrice.GameOver()) {
+                Draw(0);
+                data->ActualState = StateEnum::GameOverMenu;     //change state if game is over 
+
+                return;
+            }
+            int linedeleted = game_matrice.DeleteLine();
+            //count lines complete and delete them
+            if (linedeleted > 0) {
+                lineComplet += linedeleted;
+                score += 10 * linedeleted + 10 * (linedeleted - 1);
+            }
+
+            if (lineComplet >= goal[lvl]) {
+                lineComplet = lineComplet - goal[lvl];
+                lvl += 1;
+                //increment speed of the game
+                if (lvl > 7)
+                    speed -= 20;
+                else
+                    speed -= 50;
+                score += 100;
+            }
+            //moove to next tetromino
+            current_Tetromino = seconde_Tetromino;
+            seconde_Tetromino = third_Tetromino;
+            third_Tetromino = fourth_Tetromino;
+            fourth_Tetromino = Tetromino(TetrominoEnum(rand() % 7));
+        }    
     }
 }
 
 void GameState::HoldTetromino() {
+    // this function allow to the player to hold a tetromino
     if (holded_Tetromino.estVide()){
         game_matrice.DeleteTetromino(&current_Tetromino);
         holded_Tetromino = current_Tetromino;
@@ -155,14 +171,13 @@ void GameState::HoldTetromino() {
             std::swap(holded_Tetromino, current_Tetromino);
         }    
     }
-    
 }
 
 void GameState::Draw(float dt) {
     data->window.clear(sf::Color::Black);
     data->window.draw(background);
 
-
+    // draw all the bloc active on the matrix
     for (int i = 0; i < game_matrice.ySize; ++i) {
         for (int j = 0; j < game_matrice.xSize; ++j) {
             if (game_matrice.matrice[i][j].active) {
@@ -241,5 +256,4 @@ void GameState::DrawSideInfo() {
     data->window.draw(current_score);
     data->window.draw(best_score);
     data->window.draw(advanced_bar);
-
 }

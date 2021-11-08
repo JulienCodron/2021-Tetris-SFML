@@ -13,6 +13,7 @@ public:
 
 class Tetromino {
 public:
+	//position of the tetromino on the matrix
 	int posX;
 	int posY;
 	Block piece[4][4];

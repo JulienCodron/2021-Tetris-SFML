@@ -1,10 +1,11 @@
 #include "MemoryManager.hpp"
-#include <iostream>
+
+// I try to implement a basic Stack Manager that i finally didn't use it 
 
 MemoryManager::MemoryManager() {}
 
-// Construct the allocator
 void MemoryManager::Init(size_t size) {
+    // Construct the allocator
     if (memory_ptr != nullptr) {
         free(memory_ptr);
     }
@@ -12,13 +13,13 @@ void MemoryManager::Init(size_t size) {
     marker = 0;
 }
 
-// Get a marker to the current top
 size_t MemoryManager::getMarker() {
+    // Get a marker to the current top
     return marker;
 }
 
-// Allocates a new block from the top
 void* MemoryManager::alloc(size_t size) {
+    // Allocates a new block from the top
     const std::size_t nextAddress = (size_t)memory_ptr + marker;
     if (sizeof((void*)nextAddress) + size > total_size) {
         return nullptr;
@@ -29,21 +30,16 @@ void* MemoryManager::alloc(size_t size) {
     return g;
 }
 
-// Rolls the stack back to a previous marker
 void MemoryManager::freeToMarker(size_t newMarker) {
+    //Rolls the stack back to a previous marker
     total_size += newMarker;
     marker -= newMarker;
 }
 
-// Clear the whole stack
 void MemoryManager::clear() {
+    // Clear the whole stack
     total_size += marker;
     marker = 0;
-}
-
-// Show how many space left
-void MemoryManager::memoryLeft() {
-    std::cout << total_size << std::endl;
 }
 
 MemoryManager::~MemoryManager() {

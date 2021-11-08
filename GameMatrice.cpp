@@ -3,7 +3,7 @@
 GameMatrice::GameMatrice(){}
 
 void GameMatrice::UpdateTetromino(Tetromino *t) {
-	//update the matrice with a tetromino
+	//update block of matrice with a tetromino, using his postion and his blocks
 	for (int i = 0; i <= 3; ++i)
 		for (int j = 0; j <= 3; ++j) 
 			if (IsOnMatrice(t->posY + i, t->posX + j)) {
@@ -20,6 +20,7 @@ bool GameMatrice::IsOnMatrice(int i, int j) {
 }
 
 bool GameMatrice::CanMooveDown(Tetromino *t) {
+	//Check if the Tetromino can moove down or not
 	DeleteTetromino(t);
 	for (int i = 0; i <= 3; ++i)
 		for (int j = 0; j <= 3; ++j) 
@@ -34,6 +35,7 @@ bool GameMatrice::CanMooveDown(Tetromino *t) {
 }
 
 bool GameMatrice::CanRotate(Tetromino* t) {
+	//Check if the Tetromino can rotate or not
 	for (int i = 0; i <= 3; ++i)
 		for (int j = 0; j <= 3; ++j) {
 			if (!IsOnMatrice(t->posY + i, t->posX + j))
@@ -44,7 +46,8 @@ bool GameMatrice::CanRotate(Tetromino* t) {
 	return true;
 }
 
-void GameMatrice::MooveDown(Tetromino* t) {
+void GameMatrice::MoveDown(Tetromino* t) {
+	//Moove down the position of the Tetromino on the matrice
 	if (CanMooveDown(t)) {
 		DeleteTetromino(t);
 		t->posY += 1;
@@ -52,6 +55,7 @@ void GameMatrice::MooveDown(Tetromino* t) {
 }
 
 void GameMatrice::DeleteTetromino(Tetromino* t) {	
+	//Remove a Tetromino from the matrice
 	for (int i = 0; i <= 3; ++i)
 		for (int j = 0; j <= 3; ++j)
 			if (IsOnMatrice(t->posY + i, t->posX + j)) {
@@ -61,24 +65,22 @@ void GameMatrice::DeleteTetromino(Tetromino* t) {
 			}
 }
 
-void GameMatrice::MooveLeft(Tetromino *t) {
+void GameMatrice::MoveLeft(Tetromino *t) {
+	//Check if the Tetromino can move left and do it
 	DeleteTetromino(t);
 	for (int i = 0; i <= 3; ++i)
 		for (int j = 0; j <= 3; ++j)
 			if (t->piece[i][j].active) {
-				if ((!IsOnMatrice(t->posY + i, t->posX + j -1)) || matrice[t->posY + i][t->posX + j-1].active) {
-					UpdateTetromino(t);
+				if ((!IsOnMatrice(t->posY + i, t->posX + j - 1)) || matrice[t->posY + i][t->posX + j - 1].active) {
 					return;
 				}
 			}
-
-	
 	t->posX -= 1;
 }
 
-void GameMatrice::MooveRight(Tetromino *t) {
+void GameMatrice::MoveRight(Tetromino *t) {
+	//Check if the Tetromino can move to rigth and do it
 	DeleteTetromino(t);
-
 	for (int i = 0; i <= 3; ++i)		
 		for (int j = 0; j <= 3; ++j)
 			if (t->piece[i][j].active) {
@@ -87,12 +89,11 @@ void GameMatrice::MooveRight(Tetromino *t) {
 					return;
 				}
 			}
-
-	DeleteTetromino(t);
 	t->posX += 1;
 }
 
 void GameMatrice::Rotate(Tetromino* t) {
+	//Rotate the Tetromino if he can
 	Tetromino tmp = Tetromino();
 	tmp.posX = t->posX;
 	tmp.posY = t->posY;
@@ -114,6 +115,7 @@ void GameMatrice::Rotate(Tetromino* t) {
 }
 
 int GameMatrice::DeleteLine() {
+	// Delete complete lines and return number of lines deleted
 	bool line = false;
 	int nbLineDel = 0;
 	for (int a = 0; a < ySize; ++a) 
@@ -127,6 +129,7 @@ int GameMatrice::DeleteLine() {
 }
 
 bool GameMatrice::LineComplete(Block * line){
+	//check if a line is full of block
 	for (int a = 0; a < xSize; ++a) 
 		if (!line[a].active) 
 			return false;
@@ -134,6 +137,7 @@ bool GameMatrice::LineComplete(Block * line){
 }
 
 bool GameMatrice::CanSwap(Tetromino * t1, Tetromino* t2) {
+	//check if you can swap with the tetromino holded
 	for (int i = 0; i <= 3; ++i) {
 		for (int j = 0; j <= 3; ++j) {
 			if(t2->piece[i][j].active && matrice[i+ t1->posY][j+ t1->posX].active && !t1->piece[i][j].active)
@@ -145,6 +149,7 @@ bool GameMatrice::CanSwap(Tetromino * t1, Tetromino* t2) {
 
 
 bool GameMatrice::GameOver() {
+	//check if the game is over
 	bool line = false;
 	int j = 0;
 	for (int i = 0; i < ySize; ++i){

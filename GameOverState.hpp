@@ -1,6 +1,6 @@
 #pragma once
 #include "GameData.hpp"
-
+#include "State.hpp"
 
 class GameOverState : public State {
 private:

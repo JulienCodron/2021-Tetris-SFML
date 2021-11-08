@@ -1,5 +1,5 @@
 #pragma once
-#include <cstdint>
+#include <cstddef>
 #include <corecrt_malloc.h>
 
 class MemoryManager{
@@ -15,6 +15,5 @@ public:
 	size_t getMarker();
 	void* alloc(size_t size);
 	void freeToMarker(size_t marker);
-	void memoryLeft();
 	void clear();
 };

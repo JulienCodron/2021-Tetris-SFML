@@ -1,6 +1,7 @@
 #pragma once
 #include "SFML\Graphics.hpp"
 
+// Wanna do clicable button for menu, but finally i didn't implement them
 class ClicManager
 {
 public:
