@@ -3,7 +3,7 @@
 #include "Tetromino.hpp"
 #include "GameMatrice.hpp"
 #include "State.hpp"
-
+#include <fstream>
 
 class GameState : public State {
 private:
@@ -24,6 +24,7 @@ private:
 	int lvl = 0;
 	int lineComplet = 0;
 	int score = 0;
+	int best_score_int;
 
 	//sprite ans things to draw
 	sf::Text nb_line_left;
@@ -46,3 +47,6 @@ public:
 	void HoldTetromino();
 	void DrawSideInfo();
 };
+
+std::string GetBestScore();
+void SetBestScore(int);

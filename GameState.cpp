@@ -36,6 +36,7 @@ void GameState::Init() {
     current_score.setFillColor(sf::Color(244, 226, 172));
     current_score.setPosition(SCORE_WIDTH_POSTION, SCORE_HEIGHT_POSTION);
 
+    best_score_int = std::atoi(GetBestScore().c_str());
     best_score.setFont(data->assets_m.GetFont("Font"));
     best_score.setCharacterSize(25);
     best_score.setFillColor(sf::Color(244, 226, 172));
@@ -122,6 +123,10 @@ void GameState::Update() {
         else {
             //check if game is over
             if (game_matrice.GameOver()) {
+                if (score > (std::atoi(GetBestScore().c_str()))) {
+                    SetBestScore(score);
+                    best_score_int = score;
+                }     
                 Draw(0);
                 data->ActualState = StateEnum::GameOverMenu;     //change state if game is over 
 
@@ -240,7 +245,7 @@ void GameState::DrawSideInfo() {
     nb_line_left.setString(std::to_string(goal[lvl]-lineComplet));
     current_lvl.setString(std::to_string(lvl+1));
     current_score.setString(std::to_string(score));
-    best_score.setString("1250");
+    best_score.setString(std::to_string(best_score_int));
     if (lvl >= 10) 
         current_lvl.setPosition(LVL_SUP_WIDTH_POSTION, LVL_HEIGHT_POSTION);
     
@@ -257,3 +262,25 @@ void GameState::DrawSideInfo() {
     data->window.draw(best_score);
     data->window.draw(advanced_bar);
 }
+
+std::string GetBestScore() {
+    std::ifstream file(BEST_SCORE_FILE);
+    std::string line;
+
+    if (file)
+    {
+        std::getline(file, line);
+        return line;
+    }
+    return "51";
+}
+
+void SetBestScore(int score) {
+    std::ofstream file(BEST_SCORE_FILE);
+
+    if (file)
+    {
+        file << std::to_string(score);
+    }
+}
+

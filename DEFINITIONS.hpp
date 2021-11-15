@@ -1,5 +1,6 @@
 #pragma once
 
+//size of window
 #define SCREEN_WIDTH 590
 #define SCREEN_HEIGHT 960
 
@@ -7,6 +8,7 @@
 #define MAIN_MENU_BACKGROUND_FP "Ressources/Main_Menu/Grille.png"
 #define MAIN_MENU_TITLE_FP "Ressources/Main_Menu/Titre.png"
 #define MAIN_MENU_INFO_FP "Ressources/Main_Menu/MainMenuInfo.png"
+#define MAIN_MENU_CONTROL_FP "Ressources/Main_Menu/MainMenuControl.png"
 
 //Sprite for GameState / PauseState and GameOverState
 #define PAUSE "Ressources/Game/pause.png"
@@ -21,6 +23,7 @@
 
 
 #define MEMORY_ALLOCATED 100000 // for memory manager
+#define BEST_SCORE_FILE "saved_data.txt" //file where the vest score is saved
 
 //To set the position of differente sprite
 #define PLAYGROUND_WIDTH_POSTION 17

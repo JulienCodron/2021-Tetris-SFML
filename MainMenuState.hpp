@@ -12,6 +12,7 @@ private:
 	sf::Sprite background;
 	sf::Sprite title;
 	sf::Sprite info;
+	sf::Sprite control;
 
 public:
 	MainMenuState() {};
