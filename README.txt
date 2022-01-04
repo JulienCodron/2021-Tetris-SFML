@@ -1,14 +1,18 @@
-Auteur : Codron Julien
-Date dernière maj : 15/11/2021
+Autor : Codron Julien
+Last Update: 15/11/2021
 
 ----------------------------------------------------------------------------------------------------------------------------
----------------------- TETRIS SOUS SFML ---------------------- 
+------------------------ SFML TETRIS ------------------------- 
 ----------------------------------------------------------------------------------------------------------------------------
 
-Pad de bug majeur à signaler.
+Hi, thanks for the download.
 
-- Delta Time implémenté pour déplacer une sprite de manière fluide. Mais non utilisé dans le jeu.
+This project was developed in my second year of master's to learn how a gameloop works. It has been done in french.  
 
-- Memory Allocator (stack allocator) implémenté pour la gestion de la mémoir. Mais non utilisé.
+To Run the program go into the Debug file and run TetrisSFML.exe. Only working on windows
 
-- ClicManager implémenté mais non utilisé. Il avait pour objectif d'étre utilisé pour des boutons dans le menu principale et le menu pause. Mais non implémentés
+- DeltaTime is implemented, but not use to move tetromino.
+
+- Memory Allocator (stack allocator) implemented but not used, beacause don't need it.
+
+- ClicManager implemented but not used. He had for goal to be used to make buttons in the main menu and pause menu. But not implemented.
